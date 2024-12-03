@@ -20,7 +20,7 @@
 8. Verify Response - Assert J, TestNG
 9. Manage your Testcases - TestNG
 
-**CI/CD**
+## CI/CD
 10. Version Control -(Source) - Git
 11. Run your Code(Trigger), CI/CD - Jenkins
 12. Store your Code - Online - [﻿Github.com](https://github.com/) , Gitlab, Bitbucket
