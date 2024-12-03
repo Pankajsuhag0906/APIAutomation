@@ -35,3 +35,5 @@
      - Jackson API / GSON
      - Apache POI or Fillow (Excel)
      - Log4j - Logs
+
+## How to run the Project
