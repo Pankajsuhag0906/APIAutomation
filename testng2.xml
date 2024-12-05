@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd"><suite name="All Test Suite">
+    <test verbose="2" preserve-order="true" name="C:/Users/panka/IdeaProjects/APIAutomation">
+        <classes><class name="RestAssured.POST.APITesting003_NonBDD">
+            <methods><include name="test_post"/></methods>
+            </class>
+
+
+            <class name="RestAssured.POST.APITesting004_BDD">
+                <methods><include name="test_post"/></methods>
+            </class>
+        </classes>
+    </test>
+</suite>
+
+
+
