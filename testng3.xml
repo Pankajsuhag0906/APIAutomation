@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd"><suite name="All Test Suite">
+    <test verbose="2" preserve-order="true" name="C:/Users/panka/IdeaProjects/APIAutomation">
+        <classes><class name="RestAssured.POST.API_Test_Integration_Scenario">
+            <methods><include name="test_post"/></methods>
+            </class>
+
+
+            <class name="RestAssured.POST.API_Test_Integration_Scenario">
+                <methods><include name="test_update_request_put"/>
+                    <include name="test_update_request_get"/>
+                    <include name="test_delete_request"/>
+                    <include name="test_get_after_delete"/>
+
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>
+
+
+
