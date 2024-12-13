@@ -5,7 +5,11 @@ import io.restassured.http.ContentType;
 import io.restassured.response.Response;
 import io.restassured.response.ValidatableResponse;
 import io.restassured.specification.RequestSpecification;
+import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
+import static org.assertj.core.api.Assertions.*;
+import org.hamcrest.Matchers;
+
 
 public class API_Test_Integration_Scenario {
 
@@ -24,7 +28,7 @@ public class API_Test_Integration_Scenario {
     String booking_id;
 
 
-
+    @BeforeTest
     public String get_token()
     {
         String payload="{\n" +
@@ -42,11 +46,16 @@ public class API_Test_Integration_Scenario {
         validatable_response.statusCode(200);
         token=response.jsonPath().getString("token");
 
+        // ValidatableResponse Assertions
+        validatable_response.body("token",Matchers.notNullValue());
+
+        // Assertj Assertions
+        assertThat("token").isNotNull().isNotBlank().isNotEmpty().isAlphanumeric();
         System.out.println(token);
         return token;
 
     }
-
+    @BeforeTest
     public String get_id()
     {
 
@@ -72,10 +81,14 @@ public class API_Test_Integration_Scenario {
         validatable_response.statusCode(200);
 
         booking_id=response.jsonPath().getString("bookingid");
+
+        // validatableResponse Assertions
+        validatable_response.body("bookingid",Matchers.notNullValue());
+
+        // Assertj assertions
+        assertThat("booking_id").isNotNull().isNotEmpty().isNotBlank();
         System.out.println(booking_id);
         return booking_id;
-
-
 
     }
 
@@ -107,6 +120,13 @@ public class API_Test_Integration_Scenario {
             response=r.when().put();
             validatable_response =response.then().log().all();
             validatable_response.statusCode(200);
+            String firstname=response.then().extract().path("firstname");
+            String lastname=response.then().extract().path("lastname");
+
+            System.out.println("firstname =" + firstname);
+            assertThat(firstname).isEqualTo("Pankaj");
+            assertThat(lastname).isEqualTo("Suhag");
+
 
 //            String token=get_token();
 //            System.out.println(token);
@@ -126,6 +146,9 @@ public class API_Test_Integration_Scenario {
             response=r.when().log().all().get();
             validatable_response=response.then();
             validatable_response.statusCode(200);
+
+            String firstname=response.then().extract().path("firstname");
+            assertThat(firstname).isEqualTo("Pankaj");
         }
 
         @Test(priority = 3)
