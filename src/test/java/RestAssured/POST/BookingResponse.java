@@ -28,5 +28,6 @@ public class BookingResponse {
     public void setBooking(Booking booking) {
         this.booking = booking;
     }
+    //
 
 }

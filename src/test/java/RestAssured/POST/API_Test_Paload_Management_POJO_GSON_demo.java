@@ -64,7 +64,7 @@ public class API_Test_Paload_Management_POJO_GSON_demo {
             BookingResponse bookingResponse=gson.fromJson(jsonStringBooking,BookingResponse.class);
 
            // assertThat(bookingResponse.getBookingid()).isNotNull();
-          //  assertThat(bookingResponse.getBooking().getFirstname()).isEqualTo("Parveen");
+          //  assertThat(bookingResponse.getBooking().getFirstname()).isEqualTo("Parveen").;
         }
-
+//
 }

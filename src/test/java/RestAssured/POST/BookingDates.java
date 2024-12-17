@@ -23,5 +23,7 @@ public class BookingDates {
     public String getCheckout() {
         return checkout;
     }
+
+    //
 }
 

@@ -73,7 +73,7 @@ public class API_Test_Paload_Management {
             assertThat("booking_id").isNotNull().isNotEmpty().isNotBlank();
             System.out.println(booking_id);
         }
-
+//
 
 
 }
